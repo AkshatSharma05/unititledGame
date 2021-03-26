@@ -8,6 +8,7 @@ using namespace sf;
 
 Game::Game(){
     windowInit();
+    initKeys();
     statesInit();
 }
 
@@ -26,14 +27,15 @@ void Game::windowInit(){
 }
 
 void Game::statesInit(){
-    states.push(new gameState(&window));
+    states.push(new gameState(&window, &supportedKeys));
 }
 
 void Game::initKeys(){
-    supportedKeys.emplace("A", sf::Keyboard::Key::A);
-    supportedKeys.emplace("S", sf::Keyboard::Key::S);
-    supportedKeys.emplace("W", sf::Keyboard::Key::W);
-    supportedKeys.emplace("D", sf::Keyboard::Key::D);
+    this->supportedKeys.emplace("Escape", sf::Keyboard::Key::Escape);
+    this->supportedKeys.emplace("A", sf::Keyboard::Key::A);
+    this->supportedKeys.emplace("S", sf::Keyboard::Key::S);
+    this->supportedKeys.emplace("W", sf::Keyboard::Key::W);
+    this->supportedKeys.emplace("D", sf::Keyboard::Key::D);
 }
 
 void Game::updateDt(){

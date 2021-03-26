@@ -32,7 +32,7 @@ private:
     float dt;
 
     std::stack<State*> states;
-    std::map<char*, int>supportedKeys;
+    std::map<std::string, int>supportedKeys;
     
     //funcs
     void windowInit();

@@ -5,7 +5,7 @@
 class gameState : public State{
 public:
     //const dest    
-    gameState(sf::RenderWindow* window);
+    gameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys);
     virtual ~gameState();
 
     //funcs
@@ -17,4 +17,5 @@ public:
 
 private:
     Player player;
+    void initKeybinds();
 };
